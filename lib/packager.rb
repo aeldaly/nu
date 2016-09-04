@@ -6,7 +6,7 @@ class Packager
   end
 
   def calculate
-    1591.58
+    (flat_markup * (1 + people_markup + industry_markup)).round(2)
   end
 
   private
@@ -21,17 +21,17 @@ class Packager
     }
   }
 
-  attr_accessor :base_price, :type
+  attr_accessor :base_price, :people, :type
 
   def flat_markup
-    MARKUPS[:flat]
+    base_price * (1 + MARKUPS[:flat])
   end
 
   def people_markup
-    MARKUPS[:people]
+    MARKUPS[:people] * people
   end
 
   def industry_markup
-    MARKUPS[:industries].fetch(type, 0)
+    MARKUPS[:industries].fetch(type.to_sym, 0)
   end
 end

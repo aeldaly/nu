@@ -18,8 +18,16 @@ RSpec.describe Packager do
   context "$5,432.00, 1 person, drugs" do
     let(:base_price) { 5432 }
     let(:people) { 1 }
-    let(:type) { "drugs" }
+    let(:type) { "pharma" }
 
     it { expect(subject.calculate).to eql 6199.81 }
+  end
+
+  context "$12,456.95, 4 people, books" do
+    let(:base_price) { 12456.95 }
+    let(:people) { 4 }
+    let(:type) { "books" }
+
+    it { expect(subject.calculate).to eql 13707.63 }
   end
 end
