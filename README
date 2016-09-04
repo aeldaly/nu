@@ -1,0 +1,14 @@
+NuPack's Shiny Product Repackaging Calculator
+=============================================
+
+Installation:
+=============
+1. Check out the repo
+2. cd into local repo folder
+3. run ./install.sh
+
+Running Tests:
+==============
+just type `rspec spec`
+
+Ruby version is 2.2.5. It's stored in .ruby-version and should be picked up automatically by your ruby version manager (eg: rvm, or rbenv)
